@@ -26,6 +26,7 @@ class Designation extends Controller
         $data['desig_description'] = $request['description'];
         $data['desig_rank'] = $request['rank'];
         $data['desig_short_name'] = $request['sname'];
+        $data['company_id'] = $request['cid'];
         tbl_designations::insert($data);
         return redirect()->route('designation_list');
         //return back();
@@ -48,6 +49,7 @@ class Designation extends Controller
         $designation->desig_description = $request->description;
         $designation->desig_rank = $request->rank;
         $designation->desig_short_name = $request->sname;
+        $designation->company_id = $request->cid;
         
 
         $designation->save();   

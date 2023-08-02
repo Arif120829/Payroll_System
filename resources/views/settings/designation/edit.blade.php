@@ -57,6 +57,11 @@
                     <label for="exampleInputEmail1">Designation Short Name</label>
                     <input type="text" autocomplete="off" class="form-control" id="sname" name="sname" placeholder="Enter Designation Short Name" value="{{ $designation_info->desig_short_name }}">
                   </div> 
+
+                  <div class="form-group">
+                <label for="cid">Company Id</label>
+                <input type="number" autocomplete="off" class="form-control" id="cid" name="cid" placeholder="Enter Company Id">
+              </div>   
      
 
             <!--

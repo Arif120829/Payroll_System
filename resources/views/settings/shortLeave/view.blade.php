@@ -5,12 +5,12 @@
    <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Designation</h1>
+        <h1 class="m-0">Short Leave</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="">Home</a></li>
-          <li class="breadcrumb-item active">Designation</li>
+          <li class="breadcrumb-item active">Leave</li>
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
@@ -29,37 +29,49 @@
         <!-- general form elements -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">Add Designation</h3>
+            <h3 class="card-title">View Short Leave</h3>
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form method="post" action="{{ route('designation_add_action') }}" >
+          <form method="post" action="{{ route('update_shortleave') }}" >
             @csrf
             <div class="card-body">
 
             <div class="form-group">
-                <label for="name">Designation Name</label>
-                <input type="text" autocomplete="off" class="form-control" id="name" name="name" placeholder="Designation Name">
+                <label for="name">Employee Id</label>
+                <input type="hidden"  class="form-control" id="id" name="id"  value="{{ $leave_info->id }}" >
+                <input type="text" autocomplete="off" class="form-control"  name="eid" placeholder="employer id" value="{{ $leave_info-> employeeId }}" readonly >
               </div>  
 
               <div class="form-group">
-                <label for="description">Designation Description</label>
-                <input type="text" autocomplete="off" class="form-control" id="description" name="description" placeholder="Enter Designation Description">
-              </div>  
-
-            <div class="form-group">
-                <label for="rank">Designation Rank</label>
-                <input type="number" autocomplete="off" class="form-control" id="rank" name="rank" placeholder="Enter Designation Rank">
+                <label for="code">Date</label>
+                <input type="date" autocomplete="off" class="form-control" id="date" name="date" placeholder="Enter Short_Name" value="{{ $leave_info-> date}}" readonly>
               </div>  
 
               <div class="form-group">
-                <label for="cid">Designation Short Name</label>
-                <input type="text" autocomplete="off" class="form-control" id="sname" name="sname" placeholder="Enter Designation Short Name">
-              </div> 
+                    <label for="End Time">Start time</label>
+                    <input type="text" autocomplete="off" class="form-control" id="startTime" name="startTime" placeholder="Enter Start Time" value="{{ date('h:i A',strtotime($leave_info->startTime)) }}" readonly>
+                    
+                  
+                  </div>
+
               <div class="form-group">
-                <label for="cid">Company Id</label>
-                <input type="number" autocomplete="off" class="form-control" id="cid" name="cid" placeholder="Enter Company Id">
-              </div>     
+                    <label for="End Time">End Time</label>
+                    <input type="text" autocomplete="off" class="form-control" id="endTime" name="endTime" placeholder="Enter End Time" value="{{ date('h:i A',strtotime($leave_info->endTime)) }}" readonly>
+
+                  
+                  </div>
+
+              <div class="form-group">
+                <label for="code">Reason</label>
+                <input type="text" autocomplete="off" class="form-control" id="short_name" name="reason" placeholder="Enter Short_Name" value="{{ $leave_info-> reason}}" readonly>
+              </div>  
+
+          
+
+          
+
+            
 
         <!--
               <div class="form-group">
@@ -80,8 +92,8 @@
             <!-- /.card-body -->
 
             <div class="card-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
-               <a href="{{ route('designation_list') }}">  <button type="button" class="btn btn-primary">Go Back</button> </a>
+              
+              <a href="{{route('shortleave_list_route')}}">  <button type="button" class="btn btn-primary">Go Back</button> </a>
               
             </div>
           </form>

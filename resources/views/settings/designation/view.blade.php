@@ -58,6 +58,11 @@
                     <input type="text" autocomplete="off" class="form-control" id="sname" name="sname" placeholder="Enter Designation Short Name" value="{{ $desination_info->desig_short_name }}">
                   </div> 
 
+                  <div class="form-group">
+                <label for="cid">Company Id</label>
+                <input type="number" autocomplete="off" class="form-control" id="cid" name="cid" placeholder="Enter Company Id">
+              </div>   
+
             <!--
                   <div class="form-group">
                     <label for="exampleInputFile">Company Logo</label>

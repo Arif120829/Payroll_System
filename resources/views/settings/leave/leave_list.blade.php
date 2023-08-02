@@ -5,12 +5,12 @@
    <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Designation</h1>
+        <h1 class="m-0">Leave</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="">Home</a></li>
-          <li class="breadcrumb-item active">Designation</li>
+          <li class="breadcrumb-item active">Leave</li>
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
@@ -20,7 +20,7 @@
 @section('main_content')
 
   <div class="col-md-1">
-      <a style="" href="{{ route('designation_add') }}"><button type="button" class="btn btn-block btn-primary">Add</button></a>
+      <a style="" href="{{ route('leave_add') }}"><button type="button" class="btn btn-block btn-primary">Add</button></a>
   </div> 
   <br />
    <div class="container-fluid">
@@ -28,36 +28,32 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Designation List</h3>
+            <h3 class="card-title">Leave List</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
             <table id="example2" class="table table-bordered table-hover">
               <thead>
               <tr>
-                <th>Designation Name</th>
-                <th>Description</th>
-                <th>Rank</th>
-                <th>Designation Short Name</th>
-                <th>Company Id </th>
+                <th>Leave Name</th>
+                <th>Leave Short Name</th>
+                <th>Leave Description</th>
+                <th>AllowedLeave</th>
               </tr>
               </thead>
               <tbody>
                 <?php 
-                if(!empty($tbl_designations)){
-                foreach($tbl_designations as $com){  ?>
+                if(!empty($tbl_leave)){
+                foreach($tbl_leave as $com){  ?>
                     <tr>
-                      <td>{{ $com->desig_name }}</td>
-                      <td>{{ $com->desig_description }}</td>
-                      <td>{{ $com->desig_rank }}</td>
-                      <td>{{ $com->desig_short_name }}</td>
-                      <td>{{$com->company_id}}</td>
-                      
-                      
+                      <td>{{ $com->name }}</td>
+                      <td>{{ $com->short_name }}</td>
+                      <td>{{ $com->description }}</td>
+                      <td>{{ $com->allowedLeave}}</td>
                       <td>
-                        <a href="{{route('view_designation', $com->id)}}"><button type="button" class="btn  btn-sm btn-primary">View</button></a>
-                        <a href="{{route('edit_designation', $com->id)}}"><button type="button" class="btn  btn-sm btn-success">Edit</button></a>
-                        <a href="{{route('designation_delete', $com->id)}}"><button type="button" class="btn  btn-sm btn-danger">Delete</button></a>
+                        <a href="{{route('view_leave', $com->id)}}"><button type="button" class="btn  btn-sm btn-primary">View</button></a>
+                        <a href="{{route('edit_leave', $com->id)}}"><button type="button" class="btn  btn-sm btn-success">Edit</button></a>
+                        <a href="{{route('delete_leave', $com->id)}}"><button type="button" class="btn  btn-sm btn-danger">Delete</button></a>
                       </td>
                     </tr>
                 <?php 

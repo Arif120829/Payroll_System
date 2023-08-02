@@ -5,12 +5,12 @@
    <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Designation</h1>
+        <h1 class="m-0">View SalaryArrear</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="">Home</a></li>
-          <li class="breadcrumb-item active">Designation</li>
+          <li class="breadcrumb-item active">Leave</li>
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
@@ -29,37 +29,42 @@
         <!-- general form elements -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">Add Designation</h3>
+            <h3 class="card-title">View SalaryArrear</h3>
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form method="post" action="{{ route('designation_add_action') }}" >
+          <form method="post" action="{{ route('update_salaryArr') }}" >
             @csrf
             <div class="card-body">
 
             <div class="form-group">
-                <label for="name">Designation Name</label>
-                <input type="text" autocomplete="off" class="form-control" id="name" name="name" placeholder="Designation Name">
+                <label for="Id">Employee Id</label>
+                <input type="hidden"  class="form-control" id="id" name="id"  value="{{ $tbl_salaryArr->id }}" >
+                <input type="text" autocomplete="off" class="form-control"  name="eid" placeholder="employer id" value="{{ $tbl_salaryArr-> emId }}" readonly >
               </div>  
 
               <div class="form-group">
-                <label for="description">Designation Description</label>
-                <input type="text" autocomplete="off" class="form-control" id="description" name="description" placeholder="Enter Designation Description">
-              </div>  
-
-            <div class="form-group">
-                <label for="rank">Designation Rank</label>
-                <input type="number" autocomplete="off" class="form-control" id="rank" name="rank" placeholder="Enter Designation Rank">
+                <label for="AM">Adjust Month</label>
+                <input type="month" autocomplete="off" class="form-control" id="adjust_month" name="adjust_month" placeholder="Enter the adjust month" value="{{ $tbl_salaryArr-> adjust_month}}" readonly>
               </div>  
 
               <div class="form-group">
-                <label for="cid">Designation Short Name</label>
-                <input type="text" autocomplete="off" class="form-control" id="sname" name="sname" placeholder="Enter Designation Short Name">
-              </div> 
+                    <label for="amount">Amount</label>
+                    <input type="text" autocomplete="off" class="form-control" id="amount" name="amount" placeholder="Enter Start Time" value="{{$tbl_salaryArr-> amount}}" readonly>
+                    
+                  
+                  </div>
+
               <div class="form-group">
-                <label for="cid">Company Id</label>
-                <input type="number" autocomplete="off" class="form-control" id="cid" name="cid" placeholder="Enter Company Id">
-              </div>     
+                    <label for="pd">Payable Days</label>
+                    <input type="text" autocomplete="off" class="form-control" id="payable_days" name="payable_days" placeholder="Enter End Time" value="{{$tbl_salaryArr-> payable_days}}" readonly>
+                  </div>
+
+          
+
+          
+
+            
 
         <!--
               <div class="form-group">
@@ -80,8 +85,8 @@
             <!-- /.card-body -->
 
             <div class="card-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
-               <a href="{{ route('designation_list') }}">  <button type="button" class="btn btn-primary">Go Back</button> </a>
+              
+              <a href="{{route('salaryArr_list_route')}}">  <button type="button" class="btn btn-primary">Go Back</button> </a>
               
             </div>
           </form>

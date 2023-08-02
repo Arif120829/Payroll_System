@@ -69,28 +69,28 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Employee
+                Leave
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">6</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('employee_list')}}" class="nav-link">
+                <a href="{{route('leave_list_route')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Designation</p>
+                  <p>LeaveTypes</p>
                 </a>
               </li>
 
                <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="{{route('shortleave_list_route')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Department</p>
+                  <p>ShortLeaves</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="{{route('employee_list')}}"  class="nav-link" >
+                <a href="{{route('home_index')}}"  class="nav-link" >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Employee</p>
                 </a>
@@ -98,6 +98,34 @@
               
             </ul>
           </li>
+
+        
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Payroll
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('salaryArr_list_route')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Salary Arrear</p>
+                </a>
+              </li>
+
+               
+
+              
+            </ul>
+          </li>
+
+          
+        
 
 
         <li class="nav-item">
@@ -118,9 +146,9 @@
               </li>
 
                <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="{{route('leave_list_route')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Holiday Calendar</p>
+                  <p>Leave</p>
                 </a>
               </li>
 

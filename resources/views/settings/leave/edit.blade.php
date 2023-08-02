@@ -5,7 +5,7 @@
    <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Designation</h1>
+        <h1 class="m-0">Leave</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -29,37 +29,37 @@
         <!-- general form elements -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">Add Designation</h3>
+            <h3 class="card-title">Edit Leave</h3>
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form method="post" action="{{ route('designation_add_action') }}" >
+          <form method="post" action="{{ route('update_leave') }}" >
             @csrf
             <div class="card-body">
 
             <div class="form-group">
-                <label for="name">Designation Name</label>
-                <input type="text" autocomplete="off" class="form-control" id="name" name="name" placeholder="Designation Name">
+                <label for="name">Name</label>
+                <input type="hidden"  class="form-control" id="id" name="id"  value="{{ $leave_info->id }}" >
+                <input type="text" autocomplete="off" class="form-control" id="name" name="n" placeholder="Enter Name" value="{{ $leave_info->name }}" >
               </div>  
 
               <div class="form-group">
-                <label for="description">Designation Description</label>
-                <input type="text" autocomplete="off" class="form-control" id="description" name="description" placeholder="Enter Designation Description">
+                <label for="code">ShortName</label>
+                <input type="text" autocomplete="off" class="form-control" id="short_name" name="sn" placeholder="Enter Short Name" value="{{ $leave_info->short_name}}">
               </div>  
 
             <div class="form-group">
-                <label for="rank">Designation Rank</label>
-                <input type="number" autocomplete="off" class="form-control" id="rank" name="rank" placeholder="Enter Designation Rank">
+                <label for="address">Description</label>
+                <input type="text" autocomplete="off" class="form-control" id="description" name="dsc" placeholder="Enter Description" value="{{ $leave_info->description}}">
               </div>  
 
               <div class="form-group">
-                <label for="cid">Designation Short Name</label>
-                <input type="text" autocomplete="off" class="form-control" id="sname" name="sname" placeholder="Enter Designation Short Name">
+                <label for="exampleInputEmail1">AllowedLeave</label>
+                <input type="number" autocomplete="off" class="form-control" id="allowedLeave" name="aL" placeholder="Enter AllowedLeave" value="{{ $leave_info->allowedLeave}}">
               </div> 
-              <div class="form-group">
-                <label for="cid">Company Id</label>
-                <input type="number" autocomplete="off" class="form-control" id="cid" name="cid" placeholder="Enter Company Id">
-              </div>     
+
+              
+ 
 
         <!--
               <div class="form-group">
@@ -80,8 +80,8 @@
             <!-- /.card-body -->
 
             <div class="card-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
-               <a href="{{ route('designation_list') }}">  <button type="button" class="btn btn-primary">Go Back</button> </a>
+              <button type="submit" class="btn btn-primary">Update</button>
+              <a href="{{ route('leave_list_route') }}">  <button type="button" class="btn btn-primary">Go Back</button> </a>
               
             </div>
           </form>
