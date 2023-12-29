@@ -56,8 +56,8 @@
                       
                       <td>{{ $com->emId}}</td>
                       <td>{{ $com->name}}</td>
-                      <td></td>
-                      <td></td>
+                      <td>{{$com-> desig_short_name}}</td>
+                      <td>{{$com-> dept_short_name}}</td>
                       <td>{{ $com->adjust_month }}</td>
                       <td>{{ $com->payable_days }}</td>
                       <td>{{ $com->amount}}</td>

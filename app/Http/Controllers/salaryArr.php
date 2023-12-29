@@ -5,13 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\salaryarrear;
 use App\Models\employee;
+use App\Models\tbl_designations;
+use App\Models\department;
+
 
 class salaryArr extends Controller
 {
     public function index(){
            // $tbl_employee=employees::get();
            $tbl_salaryArr =salaryarrear::join('employees', 'salaryarrears.emId' ,'=' , 'employees.employeeId')
-           ->select('salaryarrears.*', 'employees.name')->get();
+           ->join('tbl_designations','employees.designation','=','tbl_designations.id')
+           ->join('departments','employees.department','=','departments.id')
+           ->select('salaryarrears.*', 'employees.name','departments.dept_short_name','tbl_designations.desig_short_name')->get();
         return view('settings.salaryArrear.salary_arrear_list',compact('tbl_salaryArr'));
     }
     public function create()
